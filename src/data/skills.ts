@@ -1,0 +1,193 @@
+import { SkillItem } from "@/types/portfolio";
+
+export const skills: SkillItem[] = [
+  // --- 1. Infraestrutura & Redes (Vivência Profissional Comprovada) ---
+  {
+    id: "infra-it",
+    name: "Infraestrutura de TI",
+    domain: "infrastructure-networks",
+    nature: "professional",
+    description: "Planejamento, operação e monitoramento de ambientes de infraestrutura de tecnologia corporativa.",
+  },
+  {
+    id: "windows-admin",
+    name: "Administração de Ambientes Windows",
+    domain: "infrastructure-networks",
+    nature: "professional",
+    description: "Configuração, gerenciamento de estações e servidores Windows com foco em estabilidade e conformidade.",
+  },
+  {
+    id: "active-directory",
+    name: "Active Directory (AD)",
+    domain: "infrastructure-networks",
+    nature: "professional",
+    description: "Gerenciamento de objetos, grupos de segurança, unidades organizacionais e políticas de acesso corporativo.",
+  },
+  {
+    id: "networks-core",
+    name: "Redes Corporativas (DNS, DHCP e VPN)",
+    domain: "infrastructure-networks",
+    nature: "professional",
+    description: "Diagnóstico, estruturação de roteamento, resolução de nomes, leases e conectividade segura via túneis VPN.",
+  },
+  {
+    id: "firewall-security",
+    name: "Firewalls & Borda (pfSense e UniFi)",
+    domain: "infrastructure-networks",
+    nature: "professional",
+    description: "Configuração de regras de filtragem de pacotes, NAT, segregação de tráfego e administração de pontos de rede UniFi.",
+  },
+  {
+    id: "servers-admin",
+    name: "Administração de Servidores",
+    domain: "infrastructure-networks",
+    nature: "professional",
+    description: "Manutenção rotineira de servidores corporativos, controle de serviços essenciais e acompanhamento de saúde do sistema.",
+  },
+
+  // --- 2. Plataformas Corporativas & Sustentação (Vivência Profissional Comprovada) ---
+  {
+    id: "m365-suite",
+    name: "Microsoft 365 (Exchange & SharePoint)",
+    domain: "corporate-platforms",
+    nature: "professional",
+    description: "Gestão de caixas de correio, permissões de compartilhamento, sincronização de identidades e suporte a ferramentas M365.",
+  },
+  {
+    id: "google-workspace",
+    name: "Google Workspace",
+    domain: "corporate-platforms",
+    nature: "professional",
+    description: "Administração do painel corporativo, permissões de diretório, e-mails institucionais e políticas de colaboração.",
+  },
+  {
+    id: "user-permission-mgmt",
+    name: "Gestão de Usuários e Permissões",
+    domain: "corporate-platforms",
+    nature: "professional",
+    description: "Auditoria de permissões, controle de ciclo de vida de acessos e aplicação de privilégio mínimo em ambientes corporativos.",
+  },
+  {
+    id: "systems-support",
+    name: "Sustentação de Sistemas e Aplicações",
+    domain: "corporate-platforms",
+    nature: "professional",
+    description: "Acompanhamento de disponibilidade de aplicações de negócio, suporte técnico N2 e mitigação de indisponibilidades.",
+  },
+  {
+    id: "incident-troubleshooting",
+    name: "Troubleshooting e Resolução de Incidentes",
+    domain: "corporate-platforms",
+    nature: "professional",
+    description: "Investigação analítica de causa-raiz, análise de logs de eventos e restabelecimento seguro de operações.",
+  },
+  {
+    id: "gas-automation",
+    name: "Automação com Google Apps Script",
+    domain: "corporate-platforms",
+    nature: "professional",
+    description: "Desenvolvimento de scripts para automatização de planilhas, formulários operacionais e fluxos de trabalho administrativos.",
+  },
+
+  // --- 3. Desenvolvimento de Software (Projetos & Estudos Estruturados) ---
+  {
+    id: "fullstack-dev",
+    name: "Desenvolvimento Front-end e Back-end",
+    domain: "software-development",
+    nature: "personal-project",
+    description: "Construção de aplicações web estruturadas com separação clara de responsabilidades e foco em experiência do usuário.",
+  },
+  {
+    id: "js-ts",
+    name: "JavaScript & TypeScript",
+    domain: "software-development",
+    nature: "personal-project",
+    description: "Aplicação de tipagem estática rigorosa, interfaces, generics e recursos modernos do ecossistema ECMAScript.",
+  },
+  {
+    id: "react-next",
+    name: "React & Next.js",
+    domain: "software-development",
+    nature: "personal-project",
+    description: "Desenvolvimento com App Router, Server/Client Components, renderização otimizada e componentização reutilizável.",
+  },
+  {
+    id: "python-lang",
+    name: "Python",
+    domain: "software-development",
+    nature: "study",
+    description: "Lógica de programação, manipulação de dados, automação de rotinas e desenvolvimento de scripts de utilidade geral.",
+  },
+  {
+    id: "rest-apis",
+    name: "APIs REST",
+    domain: "software-development",
+    nature: "study",
+    description: "Consumo e estruturação de endpoints HTTP padronizados, contratos de dados JSON e tratamento consistente de erros.",
+  },
+  {
+    id: "sql-nosql-databases",
+    name: "Bancos de Dados SQL e NoSQL",
+    domain: "software-development",
+    nature: "study",
+    description: "Modelagem conceitual de dados relacionais, queries fundamentais de consulta e conceitos de persistência não relacional.",
+  },
+  {
+    id: "system-integration-study",
+    name: "Automação e Integração de Sistemas",
+    domain: "software-development",
+    nature: "study",
+    description: "Estudo de conectividade entre ferramentas via webhooks, APIs e scripts integradores em ambientes de laboratório.",
+  },
+
+  // --- 4. Arquitetura & Práticas DevOps (Estudos Estruturados & Laboratórios) ---
+  {
+    id: "clean-code-solid",
+    name: "Clean Code & SOLID",
+    domain: "architecture-devops",
+    nature: "study",
+    description: "Aplicação prática dos princípios de responsabilidade única, código limpo, manutenibilidade e baixo acoplamento.",
+  },
+  {
+    id: "software-architecture",
+    name: "Arquitetura de Software & Design Patterns",
+    domain: "architecture-devops",
+    nature: "study",
+    description: "Estudo de padrões arquiteturais em camadas, padrões criacionais/estruturais e organização modular de código.",
+  },
+  {
+    id: "git-github",
+    name: "Git & GitHub",
+    domain: "architecture-devops",
+    nature: "personal-project",
+    description: "Controle de versão distribuído, branches estratégicas, revisões de código e fluxo de colaboração em repositórios.",
+  },
+  {
+    id: "automated-testing",
+    name: "Testes Automatizados",
+    domain: "architecture-devops",
+    nature: "study",
+    description: "Fundamentos de testes unitários e de integração para validação de comportamento e prevenção de regressões.",
+  },
+  {
+    id: "docker-containers",
+    name: "Docker & Conteinerização",
+    domain: "architecture-devops",
+    nature: "study",
+    description: "Criação de Dockerfiles, padronização de ambientes de execução e orquestração de serviços com Docker Compose em laboratório.",
+  },
+  {
+    id: "cicd-devops",
+    name: "CI/CD & Práticas DevOps",
+    domain: "architecture-devops",
+    nature: "study",
+    description: "Estudo de pipelines de integração e entrega contínua para automação de validações, builds e deploys.",
+  },
+  {
+    id: "cloud-computing",
+    name: "Cloud Computing",
+    domain: "architecture-devops",
+    nature: "study",
+    description: "Conceitos fundamentais de computação em nuvem, modelos de serviço (IaaS, PaaS) e provisionamento básico de recursos.",
+  },
+];
