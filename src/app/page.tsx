@@ -8,7 +8,6 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { TechLabSection } from "@/components/sections/TechLabSection";
 import { StudiesSection } from "@/components/sections/StudiesSection";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export default function HomePage() {
   return (
@@ -16,35 +15,35 @@ export default function HomePage() {
       <HeroSection />
       <DriveAuditFeature />
 
-      <ScrollReveal className="w-full" delay={0.04}>
+      <div className="w-full">
         <ProjectsSection />
-      </ScrollReveal>
+      </div>
 
-      <ScrollReveal className="w-full" delay={0}>
+      <div className="w-full">
         <AboutSection />
-      </ScrollReveal>
+      </div>
 
-      <ScrollReveal className="w-full" delay={0.04}>
+      <div className="w-full">
         <DomainsSection />
-      </ScrollReveal>
+      </div>
 
       <SkillsSection />
 
-      <ScrollReveal className="w-full" delay={0}>
+      <div className="w-full">
         <ExperienceSection />
-      </ScrollReveal>
+      </div>
 
-      <ScrollReveal className="w-full" delay={0}>
+      <div className="w-full">
         <TechLabSection />
-      </ScrollReveal>
+      </div>
 
-      <ScrollReveal className="w-full" delay={0.04}>
+      <div className="w-full">
         <StudiesSection />
-      </ScrollReveal>
+      </div>
 
-      <ScrollReveal className="w-full" delay={0}>
+      <div className="w-full">
         <ContactSection />
-      </ScrollReveal>
+      </div>
     </main>
   );
 }
