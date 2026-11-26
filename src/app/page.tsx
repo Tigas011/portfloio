@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/sections/HeroSection";
+import { DriveAuditFeature } from "@/components/sections/DriveAuditFeature";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { DomainsSection } from "@/components/sections/DomainsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
@@ -12,8 +13,12 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center w-full pb-20 md:pb-32">
-      {/* Hero sem ScrollReveal — é o conteúdo above-the-fold */}
       <HeroSection />
+      <DriveAuditFeature />
+
+      <ScrollReveal className="w-full" delay={0.04}>
+        <ProjectsSection />
+      </ScrollReveal>
 
       <ScrollReveal className="w-full" delay={0}>
         <AboutSection />
@@ -23,15 +28,10 @@ export default function HomePage() {
         <DomainsSection />
       </ScrollReveal>
 
-      {/* SkillsSection já tem seu próprio useInView interno */}
       <SkillsSection />
 
       <ScrollReveal className="w-full" delay={0}>
         <ExperienceSection />
-      </ScrollReveal>
-
-      <ScrollReveal className="w-full" delay={0.04}>
-        <ProjectsSection />
       </ScrollReveal>
 
       <ScrollReveal className="w-full" delay={0}>
