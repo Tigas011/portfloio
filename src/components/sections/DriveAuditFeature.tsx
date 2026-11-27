@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
+import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowDown,
   ArrowRight,
@@ -33,13 +34,11 @@ const stages = [
 
 const stageDuration = 4200;
 const lastStage = stages.length - 1;
-const screenFrame = "col-start-1 row-start-1 mx-auto w-full max-w-[22rem] self-center motion-safe:transition-[opacity,transform] motion-safe:duration-500 motion-safe:ease-out";
-const activeFrame = "opacity-100 motion-safe:translate-y-0";
-const inactiveFrame = "pointer-events-none opacity-0 motion-safe:translate-y-3";
 const focusRing = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4";
 
 export function DriveAuditFeature() {
   const headingId = useId();
+  const reduceMotion = useReducedMotion();
   const [stage, setStage] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -74,6 +73,16 @@ export function DriveAuditFeature() {
     if (stage === lastStage) setStage(0);
     setPlaying(true);
   }
+
+  const externalAccess = (
+    <motion.span
+      layoutId={reduceMotion ? undefined : "external-access"}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="inline-flex w-fit items-center rounded-sm bg-[#f4ce9b] px-1.5 py-0.5 text-[11px] font-semibold text-[#49321c]"
+    >
+      Externo
+    </motion.span>
+  );
 
   return (
     <section
@@ -123,65 +132,80 @@ export function DriveAuditFeature() {
               </span>
             </div>
 
-            <div aria-hidden="true" className="mt-3 grid min-h-[13rem]">
-              <div className={`${screenFrame} ${stage === 0 ? activeFrame : inactiveFrame}`}>
-                <div className="flex items-center gap-2.5 rounded-md border border-[#719c85] bg-[#273f33] px-3 py-2.5 text-sm font-semibold text-[#e2f4ea]">
-                  <Folder size={18} className="shrink-0 text-[#bcebd2]" />
-                  Drive compartilhado
-                </div>
-                <ul className="ml-4 space-y-2 border-l border-[#6c897a] pb-1 pl-4 pt-3">
-                  <li className="relative flex flex-wrap items-center justify-between gap-x-2 gap-y-1 rounded-md border border-[#506759] bg-[#202b24] px-2.5 py-2 text-xs before:absolute before:-left-[17px] before:top-1/2 before:w-4 before:border-t before:border-[#6c897a] sm:text-sm">
-                    <span className="inline-flex items-center gap-2"><Folder size={15} />Operações</span>
-                    <span className="text-[11px] text-[#bcebd2]">Herdado</span>
-                  </li>
-                  <li className="relative flex flex-wrap items-center justify-between gap-x-2 gap-y-1 rounded-md border border-[#506759] bg-[#202b24] px-2.5 py-2 text-xs before:absolute before:-left-[17px] before:top-1/2 before:w-4 before:border-t before:border-[#6c897a] sm:text-sm">
-                    <span className="inline-flex items-center gap-2"><Folder size={15} />Parceiros</span>
-                    <span className="text-[11px] text-[#f4ce9b]">Externo</span>
-                  </li>
-                </ul>
+            <LayoutGroup id={headingId}>
+              <div aria-hidden="true" className="mt-3 grid min-h-[13rem] items-center">
+                <AnimatePresence initial={false}>
+                  <motion.div
+                    key={stage}
+                    className="col-start-1 row-start-1 mx-auto w-full max-w-[22rem]"
+                    initial={{ opacity: 0, y: reduceMotion ? 0 : 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: reduceMotion ? 0 : -6 }}
+                    transition={{ duration: reduceMotion ? 0 : 0.28, ease: "easeOut" }}
+                  >
+                    {stage === 0 && (
+                      <div>
+                        <div className="flex items-center gap-2.5 rounded-md border border-[#719c85] bg-[#273f33] px-3 py-2.5 text-sm font-semibold text-[#e2f4ea]">
+                          <Folder size={18} className="shrink-0 text-[#bcebd2]" />
+                          Drive compartilhado
+                        </div>
+                        <ul className="ml-4 space-y-2 border-l border-[#6c897a] pb-1 pl-4 pt-3">
+                          <li className="relative flex flex-wrap items-center justify-between gap-x-2 gap-y-1 rounded-md border border-[#506759] bg-[#202b24] px-2.5 py-2 text-xs before:absolute before:-left-[17px] before:top-1/2 before:w-4 before:border-t before:border-[#6c897a] sm:text-sm">
+                            <span className="inline-flex items-center gap-2"><Folder size={15} />Operações</span>
+                            <span className="text-[11px] text-[#bcebd2]">Herdado</span>
+                          </li>
+                          <li className="relative flex flex-wrap items-center justify-between gap-x-2 gap-y-1 rounded-md border border-[#506759] bg-[#202b24] px-2.5 py-2 text-xs before:absolute before:-left-[17px] before:top-1/2 before:w-4 before:border-t before:border-[#6c897a] sm:text-sm">
+                            <span className="inline-flex items-center gap-2"><Folder size={15} />Parceiros</span>
+                            {externalAccess}
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                    {stage === 1 && (
+                      <div>
+                        <div className="grid grid-cols-2 gap-2">
+                          <span className="grid min-h-[3.5rem] place-items-center rounded-md border border-[#719c85] bg-[#273f33] px-2 text-center text-xs font-semibold text-[#e2f4ea] sm:text-sm">
+                            Permissões do Drive
+                          </span>
+                          <span className="grid min-h-[3.5rem] place-items-center rounded-md border border-[#719c85] bg-[#273f33] px-2 text-center text-xs font-semibold text-[#e2f4ea] sm:text-sm">
+                            Base de colaboradores
+                          </span>
+                        </div>
+                        <div className="mx-auto flex w-1/2 justify-center rounded-b-md border-x border-b border-[#6c897a] pt-2">
+                          <ArrowDown size={19} className="relative top-2.5 bg-[#24372d] text-[#bcebd2]" />
+                        </div>
+                        <div className="mt-5 flex flex-wrap items-center justify-between gap-x-2 gap-y-1 rounded-md border border-[#927856] bg-[#382f24] px-3 py-2.5 text-sm text-[#f4ce9b]">
+                          <span className="inline-flex items-center gap-2">
+                            <GitBranch size={16} /> Revisar acesso
+                          </span>
+                          {externalAccess}
+                        </div>
+                      </div>
+                    )}
+                    {stage === 2 && (
+                      <div className="mx-2 rounded-xl border border-[#a9bcb0] bg-[#f3efe5] p-3 text-[#18201c] shadow-[0_5px_0_#bcebd240] sm:p-4">
+                        <div className="flex items-center gap-2 border-b border-[#cbd6cb] pb-2 text-sm font-semibold">
+                          <FileText size={17} className="shrink-0 text-[#426351]" />
+                          Relatório de acessos
+                        </div>
+                        <dl className="divide-y divide-[#cbd6cb] text-xs sm:text-sm">
+                          <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 py-2">
+                            <dt>Operações</dt><dd className="text-[#426351]">Herdado</dd>
+                          </div>
+                          <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 py-2">
+                            <dt>Parceiros</dt><dd>{externalAccess}</dd>
+                          </div>
+                        </dl>
+                        <div className="mt-1 flex items-center gap-1.5 rounded bg-[#d9ebde] px-2 py-1.5 text-xs font-semibold text-[#31503d]">
+                          <ShieldCheck size={14} className="shrink-0" />
+                          Disponível para revisão
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
               </div>
-
-              <div className={`${screenFrame} ${stage === 1 ? activeFrame : inactiveFrame}`}>
-                <div className="grid grid-cols-2 gap-2">
-                  <span className="grid min-h-[3.5rem] place-items-center rounded-md border border-[#719c85] bg-[#273f33] px-2 text-center text-xs font-semibold text-[#e2f4ea] sm:text-sm">
-                    Permissões do Drive
-                  </span>
-                  <span className="grid min-h-[3.5rem] place-items-center rounded-md border border-[#719c85] bg-[#273f33] px-2 text-center text-xs font-semibold text-[#e2f4ea] sm:text-sm">
-                    Base de colaboradores
-                  </span>
-                </div>
-                <div className="mx-auto flex w-1/2 justify-center rounded-b-md border-x border-b border-[#6c897a] pt-2">
-                  <ArrowDown size={19} className="relative top-2.5 bg-[#24372d] text-[#bcebd2]" />
-                </div>
-                <div className="mt-5 flex flex-wrap items-center justify-between gap-x-2 gap-y-1 rounded-md border border-[#927856] bg-[#382f24] px-3 py-2.5 text-sm text-[#f4ce9b]">
-                  <span className="inline-flex items-center gap-2">
-                    <GitBranch size={16} /> Acesso externo
-                  </span>
-                  <span className="text-[11px]">Revisar</span>
-                </div>
-              </div>
-
-              <div className={`${screenFrame} ${stage === 2 ? activeFrame : inactiveFrame}`}>
-                <div className="mx-2 rounded-xl border border-[#a9bcb0] bg-[#f3efe5] p-3 text-[#18201c] shadow-[0_5px_0_#bcebd240] sm:p-4">
-                  <div className="flex items-center gap-2 border-b border-[#cbd6cb] pb-2 text-sm font-semibold">
-                    <FileText size={17} className="shrink-0 text-[#426351]" />
-                    Relatório de acessos
-                  </div>
-                  <dl className="divide-y divide-[#cbd6cb] text-xs sm:text-sm">
-                    <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 py-2">
-                      <dt>Operações</dt><dd className="text-[#426351]">Herdado</dd>
-                    </div>
-                    <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 py-2">
-                      <dt>Parceiros</dt><dd className="text-[#754c24]">Externo</dd>
-                    </div>
-                  </dl>
-                  <div className="mt-1 flex items-center gap-1.5 rounded bg-[#d9ebde] px-2 py-1.5 text-xs font-semibold text-[#31503d]">
-                    <ShieldCheck size={14} className="shrink-0" />
-                    Disponível para revisão
-                  </div>
-                </div>
-              </div>
-            </div>
+            </LayoutGroup>
 
             <div aria-live="polite" aria-atomic="true" className="mt-2 min-h-[6rem] sm:min-h-[5rem]">
               <span className="block text-base font-semibold">{stages[stage].title}</span>

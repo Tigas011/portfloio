@@ -26,8 +26,8 @@ export function HeroSection() {
 
         <div className="flex flex-col gap-5 border-t border-[#c9cec2] pt-5 md:flex-row md:items-center md:justify-between">
           <p className="max-w-lg text-base leading-relaxed text-[#405047]">
-            Atuo no suporte N2, com redes corporativas, ambientes Windows e
-            administração do Google Workspace.
+            Comecei como estagiário de helpdesk na Inside. Hoje, no suporte N2,
+            investigo incidentes de rede e automatizo rotinas no Microsoft 365 e no Google Workspace.
           </p>
 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-3 md:shrink-0">

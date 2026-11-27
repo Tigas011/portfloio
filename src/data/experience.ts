@@ -31,7 +31,7 @@ export const experience: ExperienceItem[] = [
   {
     id: "helpdesk-n1-inside",
     role: "Técnico Helpdesk N1",
-    periodLabel: "Jan 2026 – Jul 2026",
+    periodLabel: "Dez 2025 – Jul 2026",
     environmentType: "Inside Soluções e Gestão de TI — Suporte Técnico",
     summary:
       "Manutenção de alta taxa de resolução no primeiro contato (FCR) e cumprimento rigoroso de SLAs, com triagem técnica estruturada de incidentes para redução do TMA e retrabalho da equipe de infraestrutura.",
@@ -51,7 +51,7 @@ export const experience: ExperienceItem[] = [
   {
     id: "estagio-helpdesk-inside",
     role: "Estágio em Helpdesk",
-    periodLabel: "Out 2025 – Dez 2025",
+    periodLabel: "Mar 2025 – Dez 2025",
     environmentType: "Inside Soluções e Gestão de TI — Suporte Operacional",
     summary:
       "Suporte ágil presencial e remoto, manutenção preventiva de estações de trabalho, padronização de ambientes e controle de inventário de ativos de TI.",
