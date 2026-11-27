@@ -3,18 +3,18 @@ import { ProjectItem } from "@/types/portfolio";
 export const projects: ProjectItem[] = [
   {
     slug: "automacao-auditoria-google-workspace",
-    title: "Automação de Auditoria de Permissões no Google Workspace",
+    title: "Auditoria de permissões no Google Drive",
     shortDescription:
-      "Script em Google Apps Script para mapeamento automatizado de acessos, auditoria de permissões em diretórios compartilhados e geração de relatórios de governança.",
+      "Uma rotina em Apps Script que reúne, em um relatório, quem pode acessar cada pasta compartilhada.",
     category: "automation",
     nature: "professional",
     isSanitizedCorporateCase: true,
     context:
       "Ambiente corporativo com múltiplos drives compartilhados necessitando de controle de privilégio mínimo e auditoria periódica de acessos.",
     problem:
-      "Verificação manual demorada e propensa a falhas na identificação de permissões herdadas, acessos externos e contas inativas em diretórios compartilhados.",
+      "Revisar pasta por pasta dificultava encontrar permissões herdadas, contas inativas e acessos externos que precisavam de atenção.",
     solution:
-      "Desenvolvimento de rotina determinística em Google Apps Script que itera sobre árvores de pastas, cruza dados com a lista de colaboradores e compila relatórios consolidados.",
+      "Escrevi um script que percorre as pastas pela API do Drive, cruza os acessos com a lista de colaboradores e reúne os resultados para revisão.",
     architectureSteps: [
       {
         stepNumber: "01",
@@ -42,18 +42,18 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "arquitetura-portfolio-nextjs",
-    title: "Arquitetura Web & Portfólio Interativo em Next.js",
+    title: "Este portfólio, por dentro",
     shortDescription:
-      "Aplicação web moderna construída com Next.js 16, React 19 e TypeScript estrito, com design system customizado em grafite e terminal determinístico interativo.",
+      "Como organizei meus projetos, minha experiência e um terminal interativo em uma aplicação Next.js.",
     category: "software-eng",
     nature: "personal-project",
     isSanitizedCorporateCase: false,
     context:
       "Construção de plataforma profissional orientada a alto desempenho, acessibilidade e demonstração prática de habilidades em desenvolvimento frontend e arquitetura limpa.",
     problem:
-      "Portfólios convencionais costumam depender de templates genéricos, bibliotecas pesadas e designs repetitivos sem identidade técnica autêntica.",
+      "Eu precisava mostrar quais tecnologias uso no trabalho, quais estudo e como as aplico em projetos concretos.",
     solution:
-      "Desenvolvimento de interface baseada em tokens Precision Graphite, App Router estável, tipagem TypeScript rígida e emulação de CLI para exploração técnica no cliente.",
+      "Separei o conteúdo em dados tipados e criei componentes para os casos de projeto. No laboratório, dá para explorar meu perfil digitando comandos predefinidos.",
     architectureSteps: [
       {
         stepNumber: "01",
@@ -63,7 +63,7 @@ export const projects: ProjectItem[] = [
       {
         stepNumber: "02",
         label: "Design Tokens & UI",
-        detail: "Paleta Graphite minimalista com Tailwind CSS 3.4 e componentes atômicos desacoplados.",
+        detail: "Cores, tipografia e componentes compartilhados com Tailwind CSS.",
       },
       {
         stepNumber: "03",
@@ -79,6 +79,6 @@ export const projects: ProjectItem[] = [
       "Design System",
       "App Router",
     ],
-    repositoryUrl: "https://github.com/Tigas011",
+    repositoryUrl: "https://github.com/Tigas011/portfloio",
   },
 ];

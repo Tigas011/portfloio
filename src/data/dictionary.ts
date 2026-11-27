@@ -129,19 +129,19 @@ export const dictionaryPtBR: DictionaryContent = {
     },
     domains: {
       index: "03 // ÁREAS DE ATUAÇÃO",
-      title: "Domínios de Conhecimento e Aplicação",
-      subtitle: "Equilíbrio entre confiabilidade de infraestrutura e engenharia de aplicações.",
+      title: "Áreas de atuação",
+      subtitle: "Da administração de redes aos projetos que desenvolvo com código.",
     },
     skills: {
       index: "04 // COMPETÊNCIAS",
-      title: "Matriz Técnica de Habilidades",
-      subtitle: "Especificações detalhadas divididas por pilares de atuação.",
-      filterAll: "Todas as Competências",
+      title: "Ferramentas que uso",
+      subtitle: "Escolha uma área para ver onde uso cada tecnologia.",
+      filterAll: "Todas",
     },
     experience: {
       index: "05 // EXPERIÊNCIA",
-      title: "Atuação Profissional Corporativa",
-      subtitle: "Histórico de responsabilidade técnica em sustentação, suporte N2 e infraestrutura.",
+      title: "Experiência profissional",
+      subtitle: "Minha trajetória até o suporte N2 e a administração de infraestrutura.",
     },
     projects: {
       index: "06 // PROJETOS",
@@ -151,13 +151,13 @@ export const dictionaryPtBR: DictionaryContent = {
     },
     techLab: {
       index: "07 // TECH LAB",
-      title: "Interactive System CLI — Inspecione meu Perfil via Linha de Comando",
-      subtitle: "Simulação interativa de terminal para consulta técnica e visualização da stack.",
+      title: "Meu perfil pelo terminal",
+      subtitle: "Digite help para descobrir os comandos ou escolha um dos atalhos.",
     },
     studies: {
       index: "08 // ESTUDOS & EVOLUÇÃO",
-      title: "Trilha de Formação e Especialização",
-      subtitle: "Foco contínuo em boas práticas de arquitetura, testes e cloud computing.",
+      title: "Formação e estudos",
+      subtitle: "Graduação, cursos e o que estou praticando agora.",
     },
     contact: {
       index: "09 // CONTATO",

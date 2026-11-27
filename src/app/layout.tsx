@@ -3,17 +3,20 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
+const siteUrl = "https://portfloio-qp1h.vercel.app";
+const description = "Sou Thiago Souza de Almeida. Trabalho com suporte N2, redes e automação. Veja como usei Apps Script para revisar permissões no Google Drive.";
+
 export const metadata: Metadata = {
   title: "Thiago Souza de Almeida | Infraestrutura & Engenharia de Software",
-  description:
-    "Portfólio profissional. Especialista em diagnosticar ambientes críticos, blindar redes corporativas e construir automações com código.",
-  metadataBase: new URL("https://portfolio.local"),
+  description,
+  metadataBase: new URL(siteUrl),
   authors: [{ name: "Thiago Souza de Almeida" }],
   creator: "Thiago Souza de Almeida",
+  alternates: { canonical: "/" },
   openGraph: {
+    url: siteUrl,
     title: "Thiago Souza de Almeida | Infraestrutura & Engenharia de Software",
-    description:
-      "Portfólio profissional. Especialista em diagnosticar ambientes críticos, blindar redes corporativas e construir automações com código.",
+    description,
     type: "website",
     locale: "pt_BR",
     siteName: "Portfólio Profissional — Thiago Souza de Almeida",
@@ -41,9 +44,8 @@ const jsonLd = {
     "https://www.linkedin.com/in/thiago-souza07/",
     "https://github.com/Tigas011",
   ],
-  description:
-    "Especialista em diagnosticar ambientes críticos, blindar redes corporativas e construir automações com código.",
-  url: "https://portfolio.local",
+  description,
+  url: siteUrl,
   knowsAbout: [
     "Infraestrutura de TI",
     "Active Directory",
@@ -69,14 +71,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="dark scroll-smooth">
+    <html lang="pt-BR" className="dark motion-safe:scroll-smooth">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans bg-graphite-950 text-zinc-100 antialiased min-h-screen flex flex-col selection:bg-blue-500/20">
+      <body className="font-sans bg-graphite-950 text-zinc-100 antialiased min-h-screen flex flex-col">
         <Header />
         <div className="flex-1 w-full">
           {children}

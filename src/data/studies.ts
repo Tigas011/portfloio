@@ -20,17 +20,17 @@ export interface AcademicItem {
 export const academicFormation: AcademicItem[] = [
   {
     id: "eng-software-ucsal",
-    degree: "Bacharelado em Engenharia de Software (3º Semestre)",
+    degree: "Bacharelado em Engenharia de Software",
     institution: "Universidade Cruzeiro do Sul",
-    period: "Ago 2026 – Jul 2029",
-    status: "Previsto",
+    period: "Ago 2026 – Jun 2029 (previsão)",
+    status: "Em andamento",
     nature: "academic",
   },
   {
     id: "ads-ung",
     degree: "Tecnólogo em Análise e Desenvolvimento de Sistemas (ADS)",
     institution: "Universidade Guarulhos – UNG",
-    period: "Fev 2025 – Jun 2026",
+    period: "Fev 2025 – Jul 2026",
     status: "Transferido para Eng. de Software",
     nature: "academic",
   },
@@ -39,7 +39,7 @@ export const academicFormation: AcademicItem[] = [
     degree: "Técnico em Informática",
     institution: "Senac São Paulo",
     period: "Fev 2023 – Out 2024",
-    status: "Transição para ADS & Estágio",
+    status: "Interrompido para transição acadêmica e profissional",
     nature: "academic",
   },
 ];
