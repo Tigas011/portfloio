@@ -26,12 +26,12 @@ export function SafeTerminal() {
     },
   ]);
 
-  const terminalEndRef = useRef<HTMLDivElement>(null);
+  const logRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-scroll para a última linha quando o histórico é atualizado
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    const log = logRef.current;
+    if (log) log.scrollTop = log.scrollHeight;
   }, [history]);
 
   function executeCommand(rawCommand: string) {
@@ -155,8 +155,9 @@ export function SafeTerminal() {
 
       {/* Área de Visualização e Logs com Scroll */}
       <div
+        ref={logRef}
         className="p-4 sm:p-5 space-y-4 min-h-[300px] max-h-[460px] overflow-y-auto overflow-x-auto text-zinc-300 leading-relaxed"
-        onClick={() => inputRef.current?.focus()}
+        onClick={() => inputRef.current?.focus({ preventScroll: true })}
       >
         {history.map((entry) => (
           <div key={entry.id} className="space-y-1.5">
@@ -224,7 +225,7 @@ export function SafeTerminal() {
           </button>
         </form>
 
-        <div ref={terminalEndRef} />
+
       </div>
     </div>
   );
