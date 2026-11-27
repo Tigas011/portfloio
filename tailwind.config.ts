@@ -16,10 +16,10 @@ const config: Config = {
       },
       colors: {
         graphite: {
-          950: "#09090B", // Fundo primário (Canvas)
-          900: "#121215", // Superfície de cards
-          850: "#18181B", // Superfície elevada / Hover / Terminal
-          800: "#27272A", // Elementos secundários
+          950: "#121915", // Fundo primário (Canvas)
+          900: "#1B241F", // Superfície de cards
+          850: "#222D26", // Superfície elevada / Hover / Terminal
+          800: "#344139", // Elementos secundários
         },
         accent: {
           professional: "#10B981", // Esmeralda: Experiência profissional comprovada

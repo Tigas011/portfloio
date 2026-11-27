@@ -11,39 +11,25 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center w-full pb-20 md:pb-32">
+    <main className="flex min-h-screen flex-col items-center w-full">
       <HeroSection />
       <DriveAuditFeature />
 
-      <div className="w-full">
-        <ProjectsSection />
-      </div>
+      <ProjectsSection />
 
-      <div className="w-full">
-        <AboutSection />
-      </div>
+      <AboutSection />
 
-      <div className="w-full">
-        <DomainsSection />
-      </div>
+      <DomainsSection />
 
       <SkillsSection />
 
-      <div className="w-full">
-        <ExperienceSection />
-      </div>
+      <ExperienceSection />
 
-      <div className="w-full">
-        <TechLabSection />
-      </div>
+      <TechLabSection />
 
-      <div className="w-full">
-        <StudiesSection />
-      </div>
+      <StudiesSection />
 
-      <div className="w-full">
-        <ContactSection />
-      </div>
+      <ContactSection />
     </main>
   );
 }
