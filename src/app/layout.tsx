@@ -3,11 +3,20 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const siteUrl = "https://thiagosalmeida.vercel.app";
+const siteUrl = "https://thiagosalmeida.vercel.app/";
+const title = "Thiago Souza de Almeida | Suporte N2, Infraestrutura e Automação";
 const description = "Sou Thiago Souza de Almeida. Trabalho com suporte N2, redes e automação. Veja como usei Apps Script para revisar permissões no Google Drive.";
 
+const socialImage = {
+  url: new URL("/portfolio-open-graph.jpg", siteUrl).href,
+  width: 1200,
+  height: 627,
+  type: "image/jpeg",
+  alt: "Thiago Souza de Almeida, analista de suporte N2, e as etapas da auditoria de permissões no Google Drive",
+};
+
 export const metadata: Metadata = {
-  title: "Thiago Souza de Almeida | Infraestrutura & Engenharia de Software",
+  title,
   description,
   metadataBase: new URL(siteUrl),
   authors: [{ name: "Thiago Souza de Almeida" }],
@@ -15,11 +24,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     url: siteUrl,
-    title: "Thiago Souza de Almeida | Infraestrutura & Engenharia de Software",
+    title,
     description,
     type: "website",
     locale: "pt_BR",
     siteName: "Portfólio Profissional — Thiago Souza de Almeida",
+    images: [socialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [socialImage],
   },
   robots: {
     index: true,
