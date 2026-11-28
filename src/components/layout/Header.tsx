@@ -8,10 +8,8 @@ import { dictionaryPtBR } from "@/data/dictionary";
 const { author, navigation } = dictionaryPtBR;
 const navLinks = [
   { href: "#projetos", label: navigation.projects },
-  { href: "#sobre", label: navigation.about },
-  { href: "#atuacao", label: navigation.domains },
-  { href: "#competencias", label: navigation.skills },
   { href: "#experiencia", label: navigation.experience },
+  { href: "#competencias", label: navigation.skills },
   { href: "#tech-lab", label: navigation.techLab },
   { href: "#contato", label: navigation.contact },
 ];

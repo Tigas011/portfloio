@@ -1,53 +1,33 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { dictionaryPtBR } from "@/data/dictionary";
 
 export function HeroSection() {
-  const { name } = dictionaryPtBR.author;
-
   return (
-    <section
-      id="top"
-      aria-labelledby="intro-title"
-      className="w-full scroll-mt-16 bg-[#f3efe5] text-[#18201c] selection:bg-[#bcebd2] selection:text-[#18201c]"
-    >
-      <div className="mx-auto w-full max-w-6xl px-6 pb-10 pt-11 sm:pb-12 sm:pt-14 lg:pt-16">
-        <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm">
-          <span className="font-semibold">{name}</span>
-          <span className="text-[#526158]">Guarulhos, SP</span>
-        </p>
-
+    <section id="top" aria-labelledby="intro-title" className="w-full bg-[#f3efe5] text-[#18201c]">
+      <div className="mx-auto max-w-6xl px-6 pb-6 pt-12 sm:pt-16 lg:pt-20">
         <h1
           id="intro-title"
-          className="mb-7 mt-5 text-[clamp(2rem,6.6vw,5.25rem)] font-semibold leading-[1.04] tracking-[-0.07em] sm:mb-8 sm:mt-6"
+          className="mb-7 font-serif text-[clamp(2.75rem,7.4vw,6rem)] font-normal leading-[0.98] tracking-[-0.04em] text-[#21392d]"
         >
-          <span className="block">Cuido da infraestrutura.</span>
-          <span className="block text-[#35614d]">Automatizo o que se repete.</span>
+          Thiago Souza <span className="inline-block">de Almeida</span>
         </h1>
 
-        <div className="flex flex-col gap-5 border-t border-[#c9cec2] pt-5 md:flex-row md:items-center md:justify-between">
-          <p className="max-w-lg text-base leading-relaxed text-[#405047]">
-            Comecei como estagiário de helpdesk na Inside. Hoje, no suporte N2,
-            investigo incidentes de rede e automatizo rotinas no Microsoft 365 e no Google Workspace.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-3 md:shrink-0">
-            <a
-              href="#drive-audit"
-              className="inline-flex min-h-11 items-center gap-2 border border-[#18201c] bg-[#bcebd2] px-4 text-sm font-semibold transition-colors hover:bg-[#a9dbbf] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#18201c]"
-            >
-              Ver o estudo de caso
-              <ArrowDown className="size-4" aria-hidden="true" />
-            </a>
-
-            <a
-              href="/docs/curriculo.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold underline decoration-[#75867c] underline-offset-4 transition-colors hover:text-[#35614d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#18201c]"
-            >
-              Currículo (PDF)
-              <ArrowUpRight className="size-4" aria-hidden="true" />
-            </a>
+        <div className="grid gap-x-12 gap-y-5 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+          <div>
+            <p className="text-lg font-semibold">Analista de Suporte N2</p>
+            <p className="mt-1 text-sm text-[#526158]">Guarulhos, SP</p>
+          </div>
+          <div>
+            <p className="max-w-[56ch] text-base leading-relaxed text-[#405047]">
+              Comecei no helpdesk da Inside. Hoje investigo incidentes de rede e escrevo scripts para automatizar tarefas no Microsoft 365 e no Google Workspace.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-x-6">
+              <a href="#drive-audit" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline underline-offset-4 hover:text-[#35614d]">
+                Ver a auditoria do Drive <ArrowDown size={16} aria-hidden="true" />
+              </a>
+              <a href="/docs/curriculo.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline underline-offset-4 hover:text-[#35614d]">
+                Currículo (PDF) <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

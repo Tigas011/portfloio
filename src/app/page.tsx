@@ -15,10 +15,10 @@ export default function HomePage() {
       <HeroSection />
       <DriveAuditFeature />
       <ProjectsSection />
+      <ExperienceSection />
       <AboutSection />
       <DomainsSection />
       <SkillsSection />
-      <ExperienceSection />
       <TechLabSection />
       <StudiesSection />
       <ContactSection />

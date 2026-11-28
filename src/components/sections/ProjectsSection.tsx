@@ -6,7 +6,7 @@ export function ProjectsSection() {
   return (
     <section id="projetos" aria-labelledby="projects-title" className="mx-auto w-full max-w-6xl px-6 pb-16 pt-8 md:pb-24">
       <h2 id="projects-title" className="mb-8 text-3xl font-semibold tracking-tight text-[#f3efe5] md:text-5xl">
-        Caderno de projetos
+        Projetos
       </h2>
       {projects.map((project) => (
         <article
@@ -17,7 +17,7 @@ export function ProjectsSection() {
         >
           <div>
             <p className="mb-3 text-sm font-semibold text-[#bcebd2]">
-              {project.isSanitizedCorporateCase ? "Trabalho em produção" : "Projeto pessoal"}
+              {project.isSanitizedCorporateCase ? "Em produção" : "Projeto pessoal"}
             </p>
             <h3 id={`${project.slug}-title`} className="text-2xl font-semibold leading-tight tracking-tight text-[#f3efe5] sm:text-3xl">
               {project.title}

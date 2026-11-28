@@ -1,112 +1,79 @@
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { SurfaceCard } from "@/components/ui/SurfaceCard";
-import { ContextBadge } from "@/components/ui/ContextBadge";
 import { experience } from "@/data/experience";
 import { dictionaryPtBR } from "@/data/dictionary";
-import { Briefcase, Building2, CheckCircle2, Cpu } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+
+const employer = "Inside Soluções e Gestão de TI";
 
 export function ExperienceSection() {
-  const expDict = dictionaryPtBR.sections.experience;
+  const { title, subtitle } = dictionaryPtBR.sections.experience;
 
   return (
     <section
       id="experiencia"
-      className="w-full max-w-6xl mx-auto px-6 py-16 md:py-24"
-      aria-label="Experiência profissional corporativa"
+      className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-16 md:py-24"
+      aria-labelledby="experiencia-titulo"
     >
-      <SectionHeading
-        index={expDict.index}
-        title={expDict.title}
-        subtitle={expDict.subtitle}
-        className="mb-12"
-      />
+      <div className="border-t border-[#39443d] pt-7 md:pt-10">
+        <h2
+          id="experiencia-titulo"
+          className="text-3xl font-semibold tracking-tight text-[#f3efe5] md:text-5xl"
+        >
+          {title}
+        </h2>
+        <p className="mt-3 max-w-prose text-base leading-relaxed text-[#c9d0c9]">
+          {subtitle}
+        </p>
+      </div>
 
-      {/* Timeline Vertical */}
-      <div className="relative pl-6 sm:pl-8 border-l border-zinc-800 space-y-12 ml-2 sm:ml-4">
-        {experience.map((item) => (
-          <div key={item.id} className="relative">
-            {/* Marcador de Linha do Tempo */}
-            <div
-              className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-graphite-950 border-2 border-emerald-400 flex items-center justify-center"
-              aria-hidden="true"
+      <div className="mt-9 md:mt-12">
+        <h3 className="pb-4 text-base font-semibold text-[#bcebd2]">
+          {employer}
+        </h3>
+        <ul className="divide-y divide-[#39443d] border-y border-[#39443d]">
+          {experience.map((item) => (
+            <li
+              key={item.id}
+              className="grid gap-2 py-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,3fr)] sm:gap-6 sm:py-7"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            </div>
+              <p className="text-sm font-medium tabular-nums text-[#bcebd2] sm:pt-1">
+                {item.periodLabel}
+              </p>
 
-            {/* Card Principal da Experiência */}
-            <SurfaceCard className="p-6 sm:p-8 space-y-6 bg-graphite-900/80 border-zinc-800">
-              {/* Header: Cargo, Período e Badges */}
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-subtle pb-5">
-                <div className="space-y-1.5">
-                  <div className="flex items-center gap-2">
-                    <Briefcase className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
-                    <h3 className="text-xl font-bold text-zinc-100 tracking-tight">
-                      {item.role}
-                    </h3>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-                    <Building2 className="w-3.5 h-3.5 text-zinc-500" aria-hidden="true" />
-                    <span>{item.environmentType}</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-2 shrink-0">
-                  <span className="font-mono text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
-                    {item.periodLabel}
-                  </span>
-                  <ContextBadge nature="professional" />
-                </div>
-              </div>
-
-              {/* Resumo da Atuação */}
-              <div className="space-y-2">
-                <p className="text-zinc-300 text-sm leading-relaxed">
+              <div className="min-w-0">
+                <h4 className="text-xl font-semibold tracking-tight text-[#f3efe5] md:text-2xl">
+                  {item.role}
+                </h4>
+                <p className="mt-1 text-sm font-medium text-[#c9d0c9]">
+                  {item.environmentType.replace(`${employer} — `, "")}
+                </p>
+                <p className="mt-3 max-w-prose text-base leading-relaxed text-[#c9d0c9]">
                   {item.summary}
                 </p>
+
+                <details className="group mt-2 max-w-prose">
+                  <summary className="flex min-h-11 w-fit cursor-pointer list-none items-center gap-2 text-sm font-medium text-[#bcebd2] underline decoration-[#bcebd2]/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#bcebd2] [&::-webkit-details-marker]:hidden">
+                    <ChevronDown
+                      className="h-4 w-4 shrink-0 group-open:rotate-180"
+                      aria-hidden="true"
+                    />
+                    Atribuições e tecnologias
+                  </summary>
+                  <div className="mt-2 space-y-5 border-l border-[#536c5d] pl-4 text-sm leading-relaxed text-[#c9d0c9]">
+                    <ul className="list-disc space-y-2 pl-4 marker:text-[#bcebd2]">
+                      {item.responsibilities.map((responsibility) => (
+                        <li key={responsibility}>{responsibility}</li>
+                      ))}
+                    </ul>
+                    <p>
+                      <span className="font-semibold text-[#f3efe5]">Tecnologias</span>
+                      <span className="mt-1 block">{item.technologiesUsed.join(", ")}</span>
+                    </p>
+                  </div>
+                </details>
               </div>
-
-              {/* Lista de Responsabilidades */}
-              <div className="space-y-3 pt-2">
-                <h4 className="font-mono text-xs uppercase tracking-wider text-zinc-400 font-semibold flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" aria-hidden="true" />
-                  <span>Atribuições & Sustentação Operacional</span>
-                </h4>
-
-                <ul className="grid grid-cols-1 gap-2.5">
-                  {item.responsibilities.map((resp, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-400 leading-relaxed"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80 shrink-0 mt-2" aria-hidden="true" />
-                      <span>{resp}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Tecnologias Utilizadas */}
-              <div className="pt-4 border-t border-subtle space-y-3">
-                <h4 className="font-mono text-xs uppercase tracking-wider text-zinc-500 font-semibold flex items-center gap-2">
-                  <Cpu className="w-3.5 h-3.5 text-zinc-500" aria-hidden="true" />
-                  <span>Tecnologias de Suporte & Infraestrutura</span>
-                </h4>
-
-                <div className="flex flex-wrap gap-2">
-                  {item.technologiesUsed.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2.5 py-1 rounded bg-graphite-950/80 border border-subtle text-xs font-mono text-zinc-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </SurfaceCard>
-          </div>
-        ))}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
