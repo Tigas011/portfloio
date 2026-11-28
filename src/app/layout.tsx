@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const siteUrl = "https://portfloio-qp1h.vercel.app";
+const siteUrl = "https://thiagosalmeida.vercel.app";
 const description = "Sou Thiago Souza de Almeida. Trabalho com suporte N2, redes e automação. Veja como usei Apps Script para revisar permissões no Google Drive.";
 
 export const metadata: Metadata = {

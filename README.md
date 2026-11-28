@@ -1,26 +1,13 @@
 # Portfólio de Thiago Souza de Almeida
 
-**Suporte N2 · Infraestrutura · Automação**
+Trabalho com suporte N2, infraestrutura e automação. Neste portfólio, reuni projetos e relatos do meu trabalho com redes, Microsoft 365 e Google Workspace.
 
-Como revisar quem tem acesso a pastas compartilhadas sem abrir cada uma delas? Esse é um dos problemas que apresento no portfólio. O [estudo de caso de Google Workspace](src/data/projects.ts) descreve como usei Apps Script e a API do Drive para reunir permissões em um relatório de revisão.
+**[Visitar o portfólio](https://thiagosalmeida.vercel.app/)**
 
-## Explore o projeto
+- [Auditoria de permissões no Google Drive](https://thiagosalmeida.vercel.app/#drive-audit) — uma demonstração de como usei Apps Script e a API do Drive para reunir permissões de pastas compartilhadas em um relatório de revisão.
+- [Trajetória profissional](https://thiagosalmeida.vercel.app/#experiencia) — do estágio em helpdesk ao suporte N2 na Inside.
+- [Terminal interativo](https://thiagosalmeida.vercel.app/#tech-lab) — comandos predefinidos para explorar minha experiência e as ferramentas que uso.
 
-| Onde começar | O que você encontra |
-| --- | --- |
-| [Projetos e estudos de caso](src/data/projects.ts) | Contexto, problema, solução e tecnologias de cada projeto. |
-| [Terminal interativo](src/components/interactive/SafeTerminal.tsx) | Uma interface com comandos predefinidos, como `whoami` e `stack --list`, para explorar meu perfil. |
-| [Página principal](src/app/page.tsx) | Como organizei experiência, projetos e laboratório em uma aplicação Next.js com React e TypeScript. |
+O site é feito com Next.js, React e TypeScript. Para rodar localmente, execute `npm ci` e `npm run dev` na raiz e abra [localhost:3000](http://localhost:3000).
 
-## Executar localmente
-
-Na raiz do repositório, com Node.js e npm instalados, execute:
-
-```sh
-npm ci
-npm run dev
-```
-
-Abra [localhost:3000](http://localhost:3000). Para conferir a tipagem e o estilo do código, use `npm run typecheck` e `npm run lint`.
-
-[Perfil no GitHub](https://github.com/Tigas011) · [LinkedIn](https://www.linkedin.com/in/thiago-souza07/)
+[LinkedIn](https://www.linkedin.com/in/thiago-souza07/) · [GitHub](https://github.com/Tigas011)
